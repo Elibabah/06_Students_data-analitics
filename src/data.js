@@ -1,7 +1,6 @@
 export const ourData = "../data/students.json";
 let dataToArray = [];
-//let generacionPorSede = [];
-let estudiantes = [];
+let generacionesArray = [];
 /*const limpiarArray = () => {
     return generacionPorSede = [];
 }*/
@@ -11,9 +10,14 @@ let estudiantes = [];
 //let iconoDinamico = ""
 
 //función limpiar generacion
-export const cleanGeneration = () => {
+export let cleanGeneration = () => {
     document.getElementById("generations").innerHTML = "";
 }
+
+let cleanStudents = () => {
+    document.getElementById("student").innerHTML = "";
+}
+
 
 
 export const alumnasWild = () => {
@@ -61,45 +65,66 @@ export const traerSedes = (nuestraData) => {
 
 //----------------------- Funcion para traer generaciones -----------------------//
 export const traerGeneraciones = (sede) => {
-    //CAMBIAR HIDDEN
-
+    //Hidden screen
     document.getElementById("screenDash").hidden = false
     document.getElementById("sedes-screen").hidden = true
 
 
-    for (const generacion in dataToArray[0][sede].generacion) {
+    // Pasar data a array vacío de generaciones
+    generacionesArray.push(dataToArray[0][sede].generacion);
+    console.log(generacionesArray);
+
+    //Iterar generación
+    for (let generacion in dataToArray[0][sede].generacion) {
         console.log(generacion);
+        console.log(dataToArray[0][sede].generacion)
+
+
+
+
         document.getElementById(
             "generations"
-        ).innerHTML += `<a onclick="dashboard.traeAlumnas('${generacion}}')"class="d-block text-light p-3"
+        ).innerHTML += `<a onclick="dashboard.alumnas('${generacion}')"class="d-block text-light p-3"
 ><i class="fas fa-user-graduate mr-2 lead"></i>${generacion} generación</a>`
         document.getElementById("nombreSede").innerHTML = "Sede" + " " + sede
-
     }
 };
 
 
 //----------------------- Funcion para traer alumnas por generación -----------------------//
-/*export const traerAlumnasGen1 = (alumnas) => {
-    for (const alumnas in dataToArray[0][sede].generacion.alumnas) {
-        console.log(alumnas);
+export const traerAlumnas = (generacion) => {
+    console.log(generacion)
+    console.log(generacionesArray)
+        //Iterar alumnas del array
+    cleanStudents()
+    for (let alumnas of generacionesArray[0][generacion].estudiantes) {
+        console.log(alumnas)
 
-        document.getElementById("generations").innerHTML += `<button onclick="dashboard.traerAlumnasGen1('${alumnas}')"> ${alumnas} </button>`
+        document.getElementById(
+            "student"
+        ).innerHTML += `
 
-
+        <div class="card" style="width: 18rem;">
+            <img src="../assets/2995914.png" class="card-img-top" alt="...">    
+        <div class="card-body" onclick="dashboard.info('${alumnas.nombre}')">
+            <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
+            <p id="info" class="card-text"></p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>`
     }
-}*/
-
+}
 
 /*console.log(sede); //muestra las generaciones al dar click
         }
-        document.getElementById("sede").innerHTML = `<h1>Campus ${sede}</h1> </h2>Generaciones: </h2>`
-        generacionPorSede.push(arrBruto[0][sede].generacion)*/
+        document.getElementById("sede").innerHTML = ` < h1 > Campus $ { sede } < /h1> </h
+            2 > Generaciones: < /h2>`
+            generacionPorSede.push(arrBruto[0][sede].generacion) * /
 
-//ajusco.generacion.primera.estudiantes
-//Funcion para ingresar de screen 2 a 3 de forma dinámica(screen 3 recibe data de cada una de las sedes)
-// Funcion pàra calcular el numero de alumnos registrados en la sede Ajusco
-// Mostrar número de generaciones en Ajusco
-// mostrar el promedio general del total de alumnos
-// Funcion pàra calcular el numero de alumnos registrados en la sede Chapultepec
-// Funcion pàra calcular el numero de alumnos registrados en la sede Iztapalapa
+            //ajusco.generacion.primera.estudiantes
+            //Funcion para ingresar de screen 2 a 3 de forma dinámica(screen 3 recibe data de cada una de las sedes)
+            // Funcion pàra calcular el numero de alumnos registrados en la sede Ajusco
+            // Mostrar número de generaciones en Ajusco
+            // mostrar el promedio general del total de alumnos
+            // Funcion pàra calcular el numero de alumnos registrados en la sede Chapultepec
+            // Funcion pàra calcular el numero de alumnos registrados en la sede Iztapalapa*/
