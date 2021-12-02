@@ -30,22 +30,15 @@ main {
 
 header {
   grid-area: header;
-  background: #136a8a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #267871,
-    #136a8a
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #267871, #136a8a);
-
   text-align: center;
   font-family: "Kiwi Maru";
-  font-size: 25px;
+  font-size: 23px;
   color: blanchedalmond;
+  background-color: #032b43;
 }
 
 h1 {
-  font-size: 17px;
+  font-size: 14px;
   font-family: "Kiwi Maru";
   color: #fff;
 }
