@@ -1,24 +1,19 @@
 export const ourData = "../data/students.json";
 let dataToArray = [];
 let generacionesArray = [];
-/*const limpiarArray = () => {
-    return generacionPorSede = [];
-}*/
+let progresoArray = [];
 
-
-
-//let iconoDinamico = ""
-
-//función limpiar generacion
+//----------- Función limpiar generacion ----------//
 export let cleanGeneration = () => {
     document.getElementById("generations").innerHTML = "";
 }
 
+//----------- Función limpiar estudiantes --------//
 let cleanStudents = () => {
     document.getElementById("student").innerHTML = "";
 }
 
-
+//------------------------------- F E T C H - A - D A T A - A P I -------------------------------//
 
 export const alumnasWild = () => {
     fetch(ourData)
@@ -32,8 +27,8 @@ export const alumnasWild = () => {
         })
         .catch((error) => console.log(error));
 };
-//----------------------------- Función iterar sedes --------------------------//
-//------------ Traer llaves ----------------//
+//---------------------------- Función iterar sedes --------------------------//
+
 export const traerSedes = (nuestraData) => {
     console.log(nuestraData);
 
@@ -94,8 +89,16 @@ export const traerGeneraciones = (sede) => {
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
     console.log(generacion)
-    console.log(generacionesArray)
-        //Iterar alumnas del array
+    console.log(progresoArray)
+
+
+    // Pasar data a array vacío de progreso
+    progresoArray.push(generacionesArray[2]);
+    console.log(generacionesArray);
+
+
+
+    //Iterar alumnas del array
     cleanStudents()
     for (let alumnas of generacionesArray[0][generacion].estudiantes) {
         console.log(alumnas)
@@ -108,23 +111,36 @@ export const traerAlumnas = (generacion) => {
             <img src="../assets/2995914.png" class="card-img-top" alt="...">    
         <div class="card-body" onclick="dashboard.info('${alumnas.nombre}')">
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
-            <p id="info" class="card-text"></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
+        <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
+            <a href="#" id="progress" class="btn btn-primary"${alumnas.progreso}>Ver progreso</a>
             </div>
         </div>`
     }
 }
 
-/*console.log(sede); //muestra las generaciones al dar click
-        }
-        document.getElementById("sede").innerHTML = ` < h1 > Campus $ { sede } < /h1> </h
-            2 > Generaciones: < /h2>`
-            generacionPorSede.push(arrBruto[0][sede].generacion) * /
 
-            //ajusco.generacion.primera.estudiantes
-            //Funcion para ingresar de screen 2 a 3 de forma dinámica(screen 3 recibe data de cada una de las sedes)
-            // Funcion pàra calcular el numero de alumnos registrados en la sede Ajusco
-            // Mostrar número de generaciones en Ajusco
-            // mostrar el promedio general del total de alumnos
-            // Funcion pàra calcular el numero de alumnos registrados en la sede Chapultepec
-            // Funcion pàra calcular el numero de alumnos registrados en la sede Iztapalapa*/
+
+//----------------------------- Función para traer progreso --------------------------------//
+
+export const traerProgreso = (alumnas) => {
+    console.log(alumnas)
+
+    for (const progreso in progresoArray.progreso) {
+        console.log(progreso)
+
+
+        document.getElementById(
+            "progress"
+        ).innerHTML += `YO PROGRESO`
+
+
+
+
+    }
+}
+
+
+
+// mostrar el promedio general del total de alumnos
+// Funcion pàra calcular el numero de alumnos registrados sede

@@ -1,4 +1,4 @@
-import { alumnasWild, ourData, traerGeneraciones, cleanGeneration, traerAlumnas } from "./data.js"; //Recibe el EXPORT de fetch de data.js
+import { alumnasWild, ourData, traerGeneraciones, cleanGeneration, traerAlumnas, traerProgreso } from "./data.js"; //Recibe el EXPORT de fetch de data.js
 
 document.getElementById("sedes").hidden = false;
 document.getElementById("screenDash").hidden = true;
@@ -17,6 +17,9 @@ window.dashboard = {
     },
     alumnas: (alumnas) => {
         traerAlumnas(alumnas)
+    },
+    progreso: (progreso) => {
+        traerProgreso(progreso)
     }
 };
 
