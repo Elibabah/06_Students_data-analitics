@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Poppins:wght@300&family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+:root {
+  --primary: #136f63;
+  --light: #b1a6a6;
+  --grey: #032b43;
+}
+
+/*body {
+    overflow: hidden;
+    font-family: "Reem Kufi", sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}*/
+
+/*---------------------------------------// SEDES SCREEN //------------------------------------*/
+
+main {
+  display: grid;
+  width: auto;
+  height: 100vh;
+  grid-template-columns: 1f 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: "header header header" "section-sedes section-sedes section-sedes" "footer footer footer";
+  column-gap: 2%;
+  row-gap: 4%;
+  background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: cover;
+}
+
+header {
+  grid-area: header;
+  background: #136a8a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #267871,
+    #136a8a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a);
+
+  text-align: center;
+  font-family: "Kiwi Maru";
+  font-size: 25px;
+  color: blanchedalmond;
+}
+
+h1 {
+  font-size: 17px;
+  font-family: "Kiwi Maru";
+  color: #fff;
+}
+
+section-sedes {
+  grid-area: section-sedes;
+  background-color: transparent;
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2%;
+  row-gap: 2%;
+}
+
+sede1 {
+  background-color: transparent;
+  text-align: center;
+  margin-left: 4%;
+  border-radius: 3%;
+  font-size: 400%;
+}
+
+sede1:hover {
+  transform: scale(1.1);
+}
+
+sede2 {
+  background-color: transparent;
+  text-align: center;
+  border-radius: 3%;
+}
+
+sede2:hover {
+  transform: scale(1.1);
+}
+
+sede3 {
+  background-color: transparent;
+  text-align: center;
+  margin-right: 4%;
+  border-radius: 3%;
+}
+
+sede3:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Kiwi Maru";
+  opacity: 0.9;
+  justify-items: center;
+  background: #136a8a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #267871,
+    #136a8a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #267871,
+    #136a8a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.log {
+  size: 10px;
+  border-radius: 0.8em;
+  height: 70px;
+  width: 70px;
+  padding-bottom: 1px;
+}
+/*
+.about {
+    width: auto;
+    height: auto;
+}
+
+.container {
+    width: auto;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+}
+
+figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    size: 90px;
+}
+
+.box {
+    color: rgb(248, 245, 245);
+    font-family: "Kiwi Maru";
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.box1 .red-social .a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: "Poppins";
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #000;
+    margin-right: 10px;
+    background-color: #fff;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.red-social .a:hover {
+    color: chocolate;
+}
+*/
+
+.group2 {
+  background-color: white;
+  text-align: center;
+  font-size: 18px;
+  justify-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+}
+
+img {
+  size: 1em;
+  border-radius: 2em;
+}
+
+.img-fluid {
+  margin-bottom: 3%;
+  border-radius: 3%;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+.img-thumbnail {
+  margin-bottom: 3%;
+  border-radius: 50%;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/*----------------------------------DASHBOARD--------------------------------*/
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+#sidebar-container {
+  min-height: 100vh;
+}
+
+#sidebar-container .logo {
+  padding: 0.875em 1.25rem;
+}
+
+#content {
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.stat {
+  border-right: 1 px solid var(--grey);
+}
+
+@media (max-width: 768px) {
+  #sidebar-container {
+    display: none;
+  }
+  .stat {
+    border: 0;
+  }
+}
