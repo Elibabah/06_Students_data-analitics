@@ -61,35 +61,37 @@ export const traerSedes = (nuestraData) => {
 
 //----------------------- Funcion para traer generaciones -----------------------//
 export const traerGeneraciones = (sede) => {
-    //CAMBIAR HIDDEN
-
+    //Hidden screen
     document.getElementById("screenDash").hidden = false
     document.getElementById("sedes-screen").hidden = true
 
-
+    //Iterar generación
     for (const generacion in dataToArray[0][sede].generacion) {
         console.log(generacion);
         document.getElementById(
             "generations"
-        ).innerHTML += `<a onclick="dashboard.traeAlumnas('${generacion}}')"class="d-block text-light p-3"
+        ).innerHTML += `<a onclick="dashboard.alumnas('${generacion}}')"class="d-block text-light p-3"
 ><i class="fas fa-user-graduate mr-2 lead"></i>${generacion} generación</a>`
         document.getElementById("nombreSede").innerHTML = "Sede" + " " + sede
-
     }
 };
 
 
 //----------------------- Funcion para traer alumnas por generación -----------------------//
-/*export const traerAlumnasGen1 = (alumnas) => {
-    for (const alumnas in dataToArray[0][sede].generacion.alumnas) {
-        console.log(alumnas);
+export const traerAlumnas = (generacion) => {
 
-        document.getElementById("generations").innerHTML += `<button onclick="dashboard.traerAlumnasGen1('${alumnas}')"> ${alumnas} </button>`
+
+    //Iterar alumnas del array
+    for (const alumnas in dataToArray[0][generacion].generacion.alumnas) {
+        console.log(alumnas)
+
+        document.getElementById(
+            "alumnasCamp"
+        ).innerHTML += `<button onclick="dashboard.alumnas('${alumnas}')"> ${alumnas}</button>`
 
 
     }
-}*/
-
+}
 
 /*console.log(sede); //muestra las generaciones al dar click
         }
