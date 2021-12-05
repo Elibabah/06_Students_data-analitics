@@ -165,10 +165,36 @@ a {
 h1 {
   font-size: 25px;
 }
+/* mejorar flex de dash*/
+div #student {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+div.card {
+  margin-top: 0.7%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+card-img-top {
+  width: 80%;
+}
 
 div.card {
   margin-top: 0.7%;
 }
+.card {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  min-width: auto;
+  word-wrap: break-word;
+  background-color: #32b0ae;
+  border-radius: 0.45rem;
+  color: #fff;
+}
+
 .navbar {
   background: #007991; /* fallback for old browsers */
   background: -webkit-linear-gradient(
