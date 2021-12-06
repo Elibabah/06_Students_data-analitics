@@ -106,10 +106,38 @@ export const traerAlumnas = (generacion) => {
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
-            <a href="#" id="progress" class="btn btn-primary"${alumnas.progreso}>Ver progreso</a>
+        <button type="button" id="progress" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal"${alumnas.progreso}>Ver progreso
+    </button>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Progreso</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div id="progress" class="modal-body"${alumnas.progreso}>
+            text
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
             </div>
         </div>
-        
         `;
   }
 };

@@ -7,6 +7,7 @@
     <title>DASHBOARD</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <!-- CDN JS Bootstrap -->
@@ -37,8 +38,6 @@
             <!-- Grid foot -->
             <div class="container p-4">
                 <!-- Texto -->
-
-                <img class="log" src="../assets/logWild.jpg" alt="logo">
                 <p>
                     Nuestro Bootcamp de Desarrollo Web y Móvil Full-Time es un curso intensivo de programación, online o presencial, y completamente práctico que te convertirá en un Programador Junior Full-Stack para añadir valor en la empresa desde el primer día.
                 </p>
@@ -72,13 +71,13 @@
 
     <article id="screenDash" hidden>
         <div class="d-flex">
-            <div id="sidebar-container" style="background-color:#085E5A;">
+            <div id="sidebar-container" style="background-color:#0a968f;">
                 <div class="logo">
-                    <h4 class="text-light font-weight-bold">Wild Code Camp</h4>
+                    <img class="log" src="../assets/logWild.jpg" alt="logo">
+                    
                 </div>
                 <div class="menu">
                     <a id="inicio" href="#" class="d-block text-light p-3"><i class="fas fa-laptop-code mr-2 lead"></i>Inicio</a>
-                    <a href="#" class="d-block text-light p-3"><i class="fas fa-book-reader mr-2 lead"></i>Alumnos</a>
                     <a id="generations"></a>
                     <a id="exit" href="./login.html" class="d-block text-light p-3"><i class="fas fa-sign-out-alt mr-2 lead"></i>Cerrar sesión</a
           >
@@ -89,19 +88,21 @@
       <!-- Barra de navegación -->
     <nav class="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <h7 id="icono-sede></h7>
+          
+            <!--  
+        <h7 id="icono-sede></h7>
           <img id=""
             src=""
             alt=""
             width="70"
             height="45"
             class="d-inline-block align-text-top"
-          />
-        </a>
-                    <div class="col-lg-9 col-md-8">
+          />-->
+                    <div class="wrapper">
                         <p class="font-weight-bold mb-0">Bienvenido, director</p>
-                        <p class="lead text-muted" id="nombreSede">Revisa el status de esta sede</p>
+                        <p class="lead text-muted text-light" id="nombreSede">Revisa el status de esta sede</p>
+                        <input type="text" id="formulario" class=" form-control">
+                        <input type="search"><i class="fas fa-book-reader mr-2 lead></i>Alumnos>
                     </div>
                 </div>
                 </nav>
@@ -158,6 +159,7 @@
                         <!-- Button trigger modal -->
     <button
       type="button"
+      id="progress"
       class="btn btn-primary"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
@@ -171,7 +173,7 @@
       id="exampleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
+      aria-label="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
