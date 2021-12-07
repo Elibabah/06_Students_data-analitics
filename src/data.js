@@ -108,7 +108,7 @@ export const traerAlumnas = (generacion) => {
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
-        
+
         <button type="button" onclick="dashboard.progreso('${index}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}">Ver progreso
     </button>
   </div>
@@ -137,11 +137,11 @@ export const traerAlumnas = (generacion) => {
 
 //----------------------------- Función para traer progreso --------------------------------//
 
-export const traerProgreso = (alumnas) => {
-  console.log(alumnas);
+export const traerProgreso = (index) => {
+  console.log(index);
 
-  for (let avance of progresoArray[alumnas].progreso) {
-    console.log(avance);
+  for (let avance in progresoArray[0][index].progreso) {
+    console.log(avance, progresoArray[0][index].progreso[avance]);
   }
 };
 /*   
