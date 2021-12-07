@@ -2,6 +2,7 @@ export const ourData = "../data/students.json";
 let dataToArray = [];
 let generacionesArray = [];
 let progresoArray = [];
+let temasArray = [];
 
 //----------- Función limpiar generacion ----------//
 export let cleanGeneration = () => {
@@ -87,11 +88,10 @@ export const traerGeneraciones = (sede) => {
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
   console.log(generacion);
-  console.log(progresoArray);
 
   // Pasar data a array vacío de progreso
-  progresoArray.push(generacionesArray[2]);
-  console.log(generacionesArray);
+  progresoArray.push(generacionesArray[0][generacion].estudiantes);
+  console.log(progresoArray);
 
   //Iterar alumnas del array
   cleanStudents();
@@ -102,43 +102,14 @@ export const traerAlumnas = (generacion) => {
 
         <div class="card" style="width: 18rem;">
             <img src="../assets/2995914.png" class="card-img-top" alt="...">    
-        <div class="card-body" onclick="dashboard.info('${alumnas.nombre}')">
+        <div class="card-body">
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
-        <button type="button" id="progress" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal"${alumnas.progreso}>Ver progreso
+        <button type="button" onclick="dashboard.progreso('${alumnas}')" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="">Ver progreso
     </button>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Progreso</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div id="progress" class="modal-body"${alumnas.progreso}>
-            text
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            </div>
-        </div>
-        `;
+  </div>
+</div>`;
   }
 };
 
@@ -147,12 +118,57 @@ export const traerAlumnas = (generacion) => {
 export const traerProgreso = (alumnas) => {
   console.log(alumnas);
 
-  for (const progreso in progresoArray.progreso) {
-    console.log(progreso);
-
-    document.getElementById("progress").innerHTML += `YO PROGRESO`;
+  for (let avance of progresoArray[alumnas].progreso) {
+    console.log(avance);
   }
 };
+/*   
+    // Pasar data a array vacío de temas
+    temasArray.push(dataToArray[2][progreso]);
+  console.log(generacionesArray);
+    
+  for (const progreso of progresoArray[2][progreso]) {
+    console.log(progreso);
+
+
+  //Iterar generación
+  for (let generacion in dataToArray[0][sede].generacion) {
+    console.log(generacion);
+      console.log(dataToArray[0][sede].generacion);*/
+
+//document.getElementById("progress").innerHTML += `YO PROGRESO`;
+/*
+        `<!-- Modal -->
+        <div
+          class="modal fade"
+          id=
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Progreso</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div id="progress" class="modal-body"${alumnas.progreso}>
+                text
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                </div>
+            </div>
+            `;*/
 
 // mostrar el promedio general del total de alumnos
 // Funcion pàra calcular el numero de alumnos registrados sede
