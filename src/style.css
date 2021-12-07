@@ -166,6 +166,12 @@ h1 {
   padding-bottom: 2px;
   justify-content: center;
 }
+/*navbar*/
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
 
 /* mejorar flex de dash*/
 div #student {
@@ -193,7 +199,7 @@ div.card {
   flex-direction: row;
   min-width: auto;
   word-wrap: break-word;
-  background: #06beb6; /* fallback for old browsers */
+  background: #6bece6b4; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #48b1bf,

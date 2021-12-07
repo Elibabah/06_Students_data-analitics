@@ -87,6 +87,7 @@
         
       <!-- Barra de navegación -->
     <nav class="navbar">
+     
       <div class="container-fluid">
           
         <h7 id="icono-sede"></h7>
@@ -100,8 +101,10 @@
                     <div class="wrapper">
                         <p class="font-weight-bold mb-0">Bienvenido, director</p>
                         <p class="lead text-muted text-light" id="nombreSede">Revisa el status de esta sede</p>
-                        <input type="text" id="formulario" class=" form-control">
-                        <input type="search"><i class="fas fa-book-reader mr-2 lead></i>Alumnos>
+<form action="form-inline position-relative d-inline-block my-3">
+  <input id="buscar" type="search" placeholder="buscar alumna" aria-label="Buscar">
+  <button class="btn position-absolute btn-search" type="submit"></button>
+</form>
                     </div>
                 </div>
                 </nav>
@@ -153,49 +156,7 @@
                         <div id="student">
                             
                         </div>
-                        <!-- Prueba modal -->
-
-                        <!-- Button trigger modal -->
-    <button
-      type="button"
-      id="progress"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      Ver progreso
-    </button>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-label="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Progreso</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            temas completados:3 tiempo invertido:2 horas
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
+                        
                 </section>
     </article>
     <!-- Option 1: Bootstrap Bundle with Popper -->
