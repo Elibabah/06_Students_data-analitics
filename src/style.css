@@ -33,7 +33,7 @@ header {
   text-align: center;
   font-family: "Mulish", sans-serif;
   font-size: 23px;
-  color: blanchedalmond;
+  color: rgb(170, 199, 218);
 }
 
 h1 {
@@ -44,7 +44,7 @@ h1 {
 
 section-sedes {
   grid-area: section-sedes;
-  background-color: transparent;
+
   display: flex;
   width: auto;
   flex-direction: row;

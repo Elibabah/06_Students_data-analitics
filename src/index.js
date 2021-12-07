@@ -17,8 +17,8 @@ entrar.addEventListener("click", () => {
 });
 
 //buscador de alumnas
-const formulario = document.querySelector;
-("formulario");
+/*const formulario = document.querySelector;
+("formulario");*/
 
 alumnasWild(ourData);
 

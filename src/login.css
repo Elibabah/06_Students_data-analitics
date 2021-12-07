@@ -86,6 +86,27 @@ form input:focus {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+footer {
+   
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  opacity: 1;
+  justify-items: center;
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 /*form button {
   border: none;
   outline: none;
