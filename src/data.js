@@ -95,8 +95,10 @@ export const traerAlumnas = (generacion) => {
 
   //Iterar alumnas del array
   cleanStudents();
-  for (let alumnas of generacionesArray[0][generacion].estudiantes) {
-    console.log(alumnas);
+  for (let [index, alumnas] of generacionesArray[0][
+    generacion
+  ].estudiantes.entries()) {
+    console.log(index, alumnas);
 
     document.getElementById("student").innerHTML += `
 
@@ -106,10 +108,30 @@ export const traerAlumnas = (generacion) => {
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
-        <button type="button" onclick="dashboard.progreso('${alumnas}')" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="">Ver progreso
+        
+        <button type="button" onclick="dashboard.progreso('${index}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}">Ver progreso
     </button>
   </div>
-</div>`;
+</div>
+
+<!-- Modal -->
+<div class=“modal fade” id=“modal_${index}” tabindex=“-1” aria-labelledby=“exampleModalLabel” aria-hidden=“true”>
+  <div class=“modal-dialog”>
+    <div class=“modal-content”>
+      <div class=“modal-header”>
+        <h5 class=“modal-title” id=“exampleModalLabel”>Modal title</h5>
+        <button type=“button” class=“btn-close” data-bs-dismiss=“modal” aria-label=“Close”></button>
+      </div>
+      <div class=“modal-body”>
+      ${alumnas.nombre}
+      </div>
+      <div class=“modal-footer”>
+        <button type=“button” class=“btn btn-secondary” data-bs-dismiss=“modal”>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
   }
 };
 
@@ -138,7 +160,7 @@ export const traerProgreso = (alumnas) => {
 
 //document.getElementById("progress").innerHTML += `YO PROGRESO`;
 /*
-        `<!-- Modal -->
+        <!-- Modal -->
         <div
           class="modal fade"
           id=
@@ -168,7 +190,7 @@ export const traerProgreso = (alumnas) => {
                 </button>
                 </div>
             </div>
-            `;*/
+            */
 
 // mostrar el promedio general del total de alumnos
 // Funcion pàra calcular el numero de alumnos registrados sede
