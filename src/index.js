@@ -5,6 +5,7 @@ import {
   cleanGeneration,
   traerAlumnas,
   traerProgreso,
+  searchStudents,
 } from "./data.js"; //Recibe el EXPORT de fetch de data.js
 
 document.getElementById("sedes").hidden = false;
@@ -15,10 +16,6 @@ entrar.addEventListener("click", () => {
   document.getElementById("sedes").hidden = true;
   document.getElementById("screenDash").hidden = false;
 });
-
-//buscador de alumnas
-/*const formulario = document.querySelector;
-("formulario");*/
 
 alumnasWild(ourData);
 

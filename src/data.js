@@ -72,7 +72,7 @@ export const traerGeneraciones = (sede) => {
   generacionesArray.push(dataToArray[0][sede].generacion);
   console.log(generacionesArray);
 
-  //Iterar generación
+  //Iterar generación y logo en dash
   for (let generacion in dataToArray[0][sede].generacion) {
     console.log(generacion);
     console.log(dataToArray[0][sede].generacion);
@@ -84,7 +84,6 @@ export const traerGeneraciones = (sede) => {
     document.getElementById("nombreSede").innerHTML = "Sede" + " " + sede;
   }
 };
-
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
   console.log(generacion);
