@@ -126,14 +126,11 @@ footer {
     transform: scale(1.05);
 }
 
-
-/*.img-thumbnail {
-    margin-bottom: 3%;
-    border-radius: 50%;
+#salir-sedes {
+    position: absolute;
+    float: right;
+    margin-left: 10%;
 }
-
-.img-thumbnail:hover {
-}*/
 
 
 /*----------------------------------DASHBOARD--------------------------------*/
