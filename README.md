@@ -2,6 +2,9 @@
 
 ## Introducción
 
+usuario: javier
+contraseña: paella
+
 1. Descripción
    Aplicación web para ver un tablero de datos para mostrar a los estudiantes datos de información de una escuela de Bootcamp de codificación, especialmente el progreso de los estudiantes en la plataforma de estudio.
 
