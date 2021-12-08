@@ -21,32 +21,28 @@
 </head>
 
 <body>
+
     <!----------------   Inicia pantalla de acceso (1) ---------------->
 
-    <section id="access-screen">
-        <div-login class="login">
-            <img class="logo" src="https://raw.githubusercontent.com/mon0macal7/06_Students_data-analitics/release/assets/logoWildCode.png" alt="logo" />
-            <div class="intro">
-                <h1>Ingresa tu usuario y contraseña</h1>
-            </div>
+    <login id="access-screen">
+        <entry>
+            <div-login class="login">
+                <img class="logo" src="https://raw.githubusercontent.com/mon0macal7/06_Students_data-analitics/release/assets/logoWildCode.png" alt="logo" />
+                <div class="intro">
+                    <h1>Ingresa tu usuario y contraseña</h1>
+                </div>
 
-            <form>
-                <input type="text" id="name" name="Nombre" placeholder="Usuario" required />
-                <input type="password" id="password" name="Acceso" placeholder="Contraseña" required />
-                <br />
-                <!-- <button type="button" id="entry">Acceder</button> -->
-                <button type="button" id="entry" class="button-33">Acceder</button>
-            </form>
+                <form>
+                    <input type="text" id="name" name="Nombre" placeholder="Usuario" required />
+                    <input type="password" id="password" name="Acceso" placeholder="Contraseña" required />
+                    <!-- <button type="button" id="entry">Acceder</button> -->
+                    <button type="button" id="entry" class="button-33">Acceder</button>
+                </form>
+            </div-login>
+        </entry>
 
-        </div-login>
-
-
-        <br>
-        <br>
-        <footer-login>
-
-            <!-- Copyright -->
-            <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
+        <footer-log>
+            <div id="footer-entry" class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
                 <p class="text-white"> &copy <b>Made by </b>Elibabah
                     <!-- Twitter -->
                     <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/ElasHer59446451" role="button" target="_blanck"><i class="fab fa-twitter"></i></a>
@@ -61,10 +57,8 @@
                     <!-- Github -->
                     <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/mon0macal7" role="button" target="_blanck"><i class="fab fa-github"></i></a>at Ajusco Bootcamp 2021 </p>
             </div>
-
-        </footer-login>
-
-    </section>
+        </footer-log>
+    </login>
 
     <script src="app.js"></script>
 </body>
