@@ -84,7 +84,6 @@ export const traerGeneraciones = (sede) => {
         document.getElementById("nombreSede").innerHTML = "Sede" + " " + sede;
     }
 };
-
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
     console.log(generacion);
