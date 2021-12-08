@@ -9,7 +9,7 @@ body {
 login {
     display: grid;
     width: auto;
-    height: 100vh;
+    height: 105vh;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 2fr 1fr;
     grid-template-areas: "entry entry entry" "footer-log footer-log footer-log";
@@ -25,12 +25,12 @@ login::after {
     content: "";
     background-color: black;
     position: absolute;
-    height: 100vh;
+    height: 105vh;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 login * {
@@ -49,6 +49,7 @@ footer-log {
     text-align: center;
     font-size: 92%;
     opacity: 1;
+    margin-top: 1%;
 }
 
 
@@ -62,31 +63,22 @@ footer-log {
     margin-top: 10%;
     text-align: center;
     justify-content: center;
+    margin-bottom: 0%;
+    width: 65%;
 }
 
 .login {
     display: block;
     margin: auto;
     width: 300px;
-    height: 530px;
+    height: 465px;
     background-color: whitesmoke;
     justify-content: space-evenly;
     padding: 0 15px;
     font-family: "Poppins", sans-serif;
     border-radius: 4%;
-    margin-top: 7%;
-    margin-bottom: 5%;
-}
-
-h1 {
-    text-align: center;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    padding-top: 7px;
-}
-
-.intro {
-    margin: 3px 0;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 form {
