@@ -77,11 +77,30 @@ export const traerGeneraciones = (sede) => {
         console.log(generacion);
         console.log(dataToArray[0][sede].generacion);
 
+        //Ícono por sede
+        let iconSede;
+
+        if (sede == "ajusco") {
+            iconSede = "../assets/axus.png";
+        } else if (sede == "chapultepec") {
+            iconSede = "../assets/chap.png"
+        } else if (sede == "iztapalapa") {
+            iconSede = "../assets/iztap.png"
+        }
+
         document.getElementById(
             "generations"
         ).innerHTML += `<a onclick="dashboard.alumnas('${generacion}')"class="d-block text-light p-3"
 ><i class="fas fa-user-graduate mr-2 lead"></i>${generacion} generación</a>`;
         document.getElementById("nombreSede").innerHTML = "Sede" + " " + sede;
+        document.getElementById("icono-sede").innerHTML = `<img
+            src="${iconSede}"
+            alt=""
+            width="70"
+            height="45"
+            class="d-inline-block align-text-top"
+          />`
+
     }
 };
 //----------------------- Funcion para traer alumnas por generación -----------------------//
