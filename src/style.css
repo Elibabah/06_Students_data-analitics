@@ -117,6 +117,7 @@ footer {
 
 .img-fluid:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 #map {
