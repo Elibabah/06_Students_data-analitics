@@ -135,6 +135,10 @@ footer {
 
 /*----------------------------------DASHBOARD--------------------------------*/
 
+#screenDash {
+    background-color: #FFF;
+}
+
 a {
     text-decoration: none;
 }
