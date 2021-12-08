@@ -7,8 +7,13 @@
     <title>DASHBOARD</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Ícono-->
+    <link rel="icon" href="https://raw.githubusercontent.com/mon0macal7/06_Students_data-analitics/release/assets/logoWildCode.png" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- CDN JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Link fontawesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
     <link rel="stylesheet" href="style.css" />
@@ -19,38 +24,20 @@
     <!----------------- Estructura Grid pantalla sedes ------------->
 
     <main id="sedes-screen">
-        <header id="entrar-dashboard">Para acceder a los datos, selecciona la imagen de la sede</header>
+        <header id="entrar-dashboard">Para acceder a los datos, selecciona la imagen de la sede
+            <a id="salir-sedes" href="./login.html"><i class="fas fa-sign-out-alt mr-2 lead"></i>Salir</a>
+        </header>
 
         <section-sedes id="sedes">
-            <!--    <sede1 id="ajus">
-                <h1>Sede Ajusco</h1>
-                <img id="sedAx" src="../assets/Ajusede.png" class="img-fluid" alt="imgAjusco" width="350" /><br />
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13028.629039471927!2d-99.22165552222965!3d19.22005729385488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdfc6a5214f00d%3A0xff7bc254e041e012!2sAjusco!5e0!3m2!1ses-419!2smx!4v1638376655643!5m2!1ses-419!2smx"
-                    width="300" height="150" style="border-radius:5%;" allowfullscreen="" loading="lazy"></iframe>
-            </sede1>
 
-            <sede2 id="chapu">
-                <h1>Sede Chapultepec</h1>
-                <img id="chapuSed" src="../assets/chapSede.png" class="img-fluid" alt="imgChapu" width="350" /><br />
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61681.590335863206!2d-99.2530495860886!3d19.36646287691377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20021458d4391%3A0x6859c9c6d53b1683!2sChapultepec!5e0!3m2!1ses-419!2smx!4v1638377039521!5m2!1ses-419!2smx"
-                    width="300" height="150" style="border-radius:5%;" allowfullscreen="" loading="lazy"></iframe>
-            </sede2>
-            <sede3 id="ixtapa">
-                <h1>Sede Iztapalapa</h1>
-                <img id="ixtaSed" src="..//assets/iztaSede.png" class="img-fluid" alt="imgIztapa" width="350" /><br />
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.517374251381!2d-99.08200685035888!3d19.34673803686901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fdf4b0edf02d%3A0xd78ca8ed33730ff4!2sIztapalapa%2C%2009858%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1638377614641!5m2!1ses-419!2smx"
-                    width="300" height="150" style="border-radius: 5%;" allowfullscreen="" loading="lazy"></iframe>
-            </sede3>-->
         </section-sedes>
 
         <!-- Aquí comienza el footer -->
 
         <footer class="bg-dark text-center text-white">
             <!-- Grid foot -->
-            <div class="container p-4">
+            <div class="container p-3">
                 <!-- Texto -->
-
-                <img class="log" src="../assets/logWild.jpg" alt="logo">
                 <p>
                     Nuestro Bootcamp de Desarrollo Web y Móvil Full-Time es un curso intensivo de programación, online o presencial, y completamente práctico que te convertirá en un Programador Junior Full-Stack para añadir valor en la empresa desde el primer día.
                 </p>
@@ -59,20 +46,20 @@
             <!-- Grid container -->
 
             <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
                 <p class="text-white"> &copy <b>Made by </b>Elibabah
                     <!-- Twitter -->
-                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/ElasHer59446451" role="button"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/ElasHer59446451" role="button" target="_blanck"><i class="fab fa-twitter"></i></a>
                     <!-- Linkedin -->
-                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/elías-hernández-elibabah-5b85b5100/" role="button"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/elías-hernández-elibabah-5b85b5100/" role="button" target="_blanck"><i class="fab fa-linkedin-in"></i></a>
                     <!-- Github -->
-                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/Elibabah" role="button"><i class="fab fa-github"></i></a> & Mon_itto
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/Elibabah" role="button" target="_blanck"><i class="fab fa-github"></i></a> & Mon_itto
                     <!-- Twitter -->
-                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/rebe_macal" role="button"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/rebe_macal" role="button" target="_blanck"><i class="fab fa-twitter"></i></a>
                     <!-- Linkedin -->
-                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/m%C3%B3nica-macal-b35989140/" role="button"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/m%C3%B3nica-macal-b35989140/" role="button" target="_blanck"><i class="fab fa-linkedin-in"></i></a>
                     <!-- Github -->
-                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/mon0macal7" role="button"><i class="fab fa-github"></i></a>at Ajusco Bootcamp 2021 </p>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/mon0macal7" role="button" target="_blanck"><i class="fab fa-github"></i></a>at Ajusco Bootcamp 2021 </p>
             </div>
 
         </footer>
@@ -84,13 +71,13 @@
 
     <article id="screenDash" hidden>
         <div class="d-flex">
-            <div id="sidebar-container" style="background-color:#085E5A;">
+            <div id="sidebar-container" style="background-color:#0a968f;">
                 <div class="logo">
-                    <h4 class="text-light font-weight-bold">Wild Code Camp</h4>
+                    <img class="log" src="../assets/logWild.jpg" alt="logo">
+
                 </div>
                 <div class="menu">
-                    <a id="inicio" href="#" class="d-block text-light p-3"><i class="fas fa-laptop-code mr-2 lead"></i>Inicio</a>
-                    <a href="#" class="d-block text-light p-3"><i class="fas fa-book-reader mr-2 lead"></i>Alumnos</a>
+                    <a id="inicio" href="#" class="d-block text-light p-3"><i class="fas fa-laptop-code mr-2 lead"></i>Volver a sedes</a>
                     <a id="generations"></a>
                     <a id="exit" href="./login.html" class="d-block text-light p-3"><i class="fas fa-sign-out-alt mr-2 lead"></i>Cerrar sesión</a
           >
@@ -99,21 +86,25 @@
       <div>
         
       <!-- Barra de navegación -->
-    <nav class="navbar";">
+    <nav class="navbar">
+     
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <h7 id="icono-sede></h7>
-          <img id=""
-            src=""
+          
+        <h7 id="icono-sede"></h7>
+          <img id="icon"
+            src="../assets/axus.png"
             alt=""
             width="70"
             height="45"
             class="d-inline-block align-text-top"
           />
-        </a>
-                    <div class="col-lg-9 col-md-8">
+                    <div class="wrapper">
                         <p class="font-weight-bold mb-0">Bienvenido, director</p>
-                        <p class="lead text-muted" id="nombreSede">Revisa el status de esta sede</p>
+                        <p class="lead text-muted text-light" id="nombreSede">Revisa el status de esta sede</p>
+<form action="form-inline position-relative d-inline-block my-3">
+  <input id="buscar" type="search" placeholder="buscar alumna" aria-label="Buscar">
+  <button class="btn position-absolute btn-search" type="submit"></button>
+</form>
                     </div>
                 </div>
                 </nav>
@@ -149,6 +140,7 @@
                                             <h6 class="text-success">84%</h6>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                         <div class="mx-auto">
                                             <h6 class="text-muted">Estudiantes con más del 90% de competencia</h6>
@@ -160,8 +152,11 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Card contenedora de datos de alumnas -->
                         <div id="student">
+                            
                         </div>
+                        
                 </section>
     </article>
     <!-- Option 1: Bootstrap Bundle with Popper -->
