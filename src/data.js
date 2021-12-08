@@ -45,7 +45,7 @@ export const traerSedes = (nuestraData) => {
         } else if (key == "chapultepec") {
             img = "../assets/chapSede.png";
             map =
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61681.590335863206!2d-99.2530495860886!3d19.36646287691377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20021458d4391%3A0x6859c9c6d53b1683!2sChapultepec!5e0!3m2!1ses-419!2smx!4v1638377039521!5m2!1ses-419!2smx";
+                "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d240902.65895694678!2d-99.194448!3d19.364647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6859c9c6d53b1683!2sChapultepec!5e0!3m2!1ses-419!2smx!4v1638933500745!5m2!1ses-419!2smx";
         } else if (key == "iztapalapa") {
             img = "../assets/iztaSede.png";
             map =
@@ -53,12 +53,12 @@ export const traerSedes = (nuestraData) => {
         }
 
         document.getElementById("sedes").innerHTML += `
-            <sede1 id="ajus">
+            <sede>
                 <h1>Sede ${key}</h1>
-                <img id="sedAx" src="${img}" class="img-fluid" alt="imgAjusco" width="350" onclick="dashboard.generacion('${key}')" /><br />
-                <iframe src="${map}"
-                    width="300" height="150" style="border-radius:5%;" allowfullscreen="" loading="lazy"></iframe>
-            </sede1>`;
+                <img id="sedAx" src="${img}" class="img-fluid" alt="imgAjusco" onclick="dashboard.generacion('${key}')" /><br />
+               <div id="map"><iframe style="border-radius:2%" src="${map}" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                </sede>`;
     }
 };
 
@@ -99,6 +99,17 @@ export const traerAlumnas = (generacion) => {
             generacion
         ].estudiantes.entries()) {
         console.log(index, alumnas);
+        //Ordenar cards de alumnas alfabeticamente
+        /*[index, alumnas].sort((a1, a2) => {
+          if (a1.nombre < a2.nombre) {
+            return -1;
+          } else if (a1.nombre > a2.nombre) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        console.log(index, alumnas);*/
 
         document.getElementById("student").innerHTML += `
 
@@ -119,11 +130,11 @@ export const traerAlumnas = (generacion) => {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"> ${alumnas.nombre}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-      ${alumnas.nombre}
+      <div class="modal-body" id="tema">
+       ${alumnas.nombre}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -134,63 +145,19 @@ export const traerAlumnas = (generacion) => {
 `;
     }
 };
-
 //----------------------------- Función para traer progreso --------------------------------//
 
 export const traerProgreso = (index) => {
     console.log(index);
 
+
+    temasArray.push(progresoArray[0][index].progreso);
+    console.log(temasArray);
+
     for (let avance in progresoArray[0][index].progreso) {
         console.log(avance, progresoArray[0][index].progreso[avance]);
     }
 };
-/*   
-    // Pasar data a array vacío de temas
-    temasArray.push(dataToArray[2][progreso]);
-  console.log(generacionesArray);
-    
-  for (const progreso of progresoArray[2][progreso]) {
-    console.log(progreso);
-
-
-  //Iterar generación
-  for (let generacion in dataToArray[0][sede].generacion) {
-    console.log(generacion);
-      console.log(dataToArray[0][sede].generacion);*/
-
-//document.getElementById("progress").innerHTML += `YO PROGRESO`;
-/*
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id=
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Progreso</h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div id="progress" class="modal-body"${alumnas.progreso}>
-                text
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cerrar
-                </button>
-                </div>
-            </div>
-            */
 
 // mostrar el promedio general del total de alumnos
 // Funcion pàra calcular el numero de alumnos registrados sede
