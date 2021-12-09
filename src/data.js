@@ -14,6 +14,11 @@ let cleanStudents = () => {
     document.getElementById("student").innerHTML = "";
 };
 
+//----------- Función limpiar progresoArray --------//
+let cleanProgreso = () => {
+    progresoArray = [];
+};
+
 //------------------------------- F E T C H - A - D A T A - A P I -------------------------------//
 
 export const alumnasWild = () => {
@@ -56,7 +61,7 @@ export const traerSedes = (nuestraData) => {
             <sede>
                 <h1>Sede ${key}</h1>
                 <img id="sedAx" src="${img}" class="img-fluid" alt="imgAjusco" onclick="dashboard.generacion('${key}')" /><br />
-               <div id="map"><iframe style="border-radius:2%" src="${map}" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div id="map"><iframe style="border-radius:2%" src="${map}" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 </sede>`;
     }
@@ -83,9 +88,9 @@ export const traerGeneraciones = (sede) => {
         if (sede == "ajusco") {
             iconSede = "../assets/axus.png";
         } else if (sede == "chapultepec") {
-            iconSede = "../assets/chap.png"
+            iconSede = "../assets/chap.png";
         } else if (sede == "iztapalapa") {
-            iconSede = "../assets/iztap.png"
+            iconSede = "../assets/iztap.png";
         }
 
         document.getElementById(
@@ -99,36 +104,32 @@ export const traerGeneraciones = (sede) => {
             width="70"
             height="45"
             class="d-inline-block align-text-top"
-          />`
-
+        />`;
     }
 };
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
     console.log(generacion);
+    //Iterar alumnas del array
+    cleanStudents();
 
     // Pasar data a array vacío de progreso
     progresoArray.push(generacionesArray[0][generacion].estudiantes);
     console.log(progresoArray);
+    console.log(generacionesArray[0][generacion].estudiantes);
 
-    //Iterar alumnas del array
-    cleanStudents();
+    //Encendemos funcion sort
+    ordenar(progresoArray[0]);
+
+    //Limpiamos progresoArray
+    cleanProgreso();
+
+    //Iteramos generacionesArray para acceder a alumnas
     for (let [index, alumnas] of generacionesArray[0][
             generacion
         ].estudiantes.entries()) {
         console.log(index, alumnas);
-        //Ordenar cards de alumnas alfabeticamente
-        /*[index, alumnas].sort((a1, a2) => {
-          if (a1.nombre < a2.nombre) {
-            return -1;
-          } else if (a1.nombre > a2.nombre) {
-            return 1;
-          } else {
-            return 0;
-          }
-        });
-        console.log(index, alumnas);*/
-
+        //progresoArray = "";
         document.getElementById("student").innerHTML += `
 
         <div class="card" style="width: 18rem;">
@@ -138,36 +139,57 @@ export const traerAlumnas = (generacion) => {
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
 
-        <button type="button" onclick="dashboard.progreso('${index}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}">Ver progreso
+        <button type="button" onclick="dashboard.progreso('${index}')"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}">Ver progreso
     </button>
-  </div>
+        </div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="modal_${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> ${alumnas.nombre}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="tema">
-       ${alumnas.nombre}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> ${alumnas.nombre}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="tema">
+        ${alumnas.nombre}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
     </div>
-  </div>
 </div>
+
 `;
     }
 };
+
+//-----------Función sort para ordenar cards alfabeticamente---------------//
+
+const ordenar = (studentsArray) => {
+    console.log(studentsArray);
+
+    studentsArray.sort((a, b) => {
+        //Limpiar cards sort
+
+        let nameA = a.nombre.toUpperCase();
+        let nameB = b.nombre.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+};
+
 //----------------------------- Función para traer progreso --------------------------------//
 
 export const traerProgreso = (index) => {
     console.log(index);
-
 
     temasArray.push(progresoArray[0][index].progreso);
     console.log(temasArray);
