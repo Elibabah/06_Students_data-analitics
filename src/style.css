@@ -1,244 +1,250 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
 :root {
-    --primary: #136f63;
-    --light: #00bd9d;
-    --grey: #032b43;
+  --primary: #136f63;
+  --light: #00bd9d;
+  --grey: #032b43;
 }
 
 body {
-    background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
 }
-
 
 /*---------------------------------------// SEDES SCREEN //------------------------------------*/
 
 main {
-    display: grid;
-    width: auto;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-template-areas: "header header header" "section-sedes section-sedes section-sedes" "footer footer footer";
-    column-gap: 2%;
-    row-gap: 4%;
-    background-size: cover;
-    background-image: url("https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  display: grid;
+  width: auto;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: "header header header" "section-sedes section-sedes section-sedes" "footer footer footer";
+  column-gap: 2%;
+  row-gap: 4%;
+  background-size: cover;
+  background-image: url("https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
 main::after {
-    content: "";
-    background-color: black;
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0.83;
+  content: "";
+  background-color: black;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.83;
 }
 
 main * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 header {
-    grid-area: header;
-    text-align: center;
-    font-family: "Mulish", sans-serif;
-    font-size: 150%;
-    color: #FFF;
-    opacity: 0.99;
-    margin-top: 3%;
+  grid-area: header;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 150%;
+  color: #fff;
+  opacity: 0.99;
+  margin-top: 3%;
 }
 
 h1 {
-    font-size: 90%;
-    font-family: "Mulish", sans-serif;
-    color: #fff;
+  font-size: 90%;
+  font-family: "Mulish", sans-serif;
+  color: #fff;
 }
 
 section-sedes {
-    grid-area: section-sedes;
-    display: flex;
-    width: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 2%;
-    row-gap: 2%;
-    margin-top: 0%;
+  grid-area: section-sedes;
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2%;
+  row-gap: 2%;
+  margin-top: 0%;
 }
 
 sede {
-    text-align: center;
+  text-align: center;
 }
 
 footer {
-    grid-area: footer;
-    text-align: center;
-    font-family: "Mulish", sans-serif;
-    opacity: 1;
-    justify-items: center;
-    background: -webkit-linear-gradient( to right, #24243e, #302b63, #0f0c29);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient( to right, #24243e, #302b63, #0f0c29);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  grid-area: footer;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  opacity: 1;
+  justify-items: center;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .group2 {
-    background-color: white;
-    text-align: center;
-    font-size: 18px;
-    justify-items: center;
-    color: black;
-    text-decoration: none;
+  background-color: white;
+  text-align: center;
+  font-size: 18px;
+  justify-items: center;
+  color: black;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {
-    .container {
-        width: auto;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 30px;
-        padding: 35px 0px;
-    }
+  .container {
+    width: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
 }
 
 .img-fluid {
-    margin-bottom: 4%;
-    border-radius: 2%;
-    width: 100%;
+  margin-bottom: 4%;
+  border-radius: 2%;
+  width: 100%;
 }
 
 .img-fluid:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 #map {
-    border-radius: 20%;
-    margin-top: 3%;
-    padding-bottom: 3%;
+  border-radius: 20%;
+  margin-top: 3%;
+  padding-bottom: 3%;
 }
 
 #map:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 #salir-sedes {
-    position: absolute;
-    float: right;
-    margin-left: 10%;
-    color: #FFF;
-    font-size: 72%;
+  position: absolute;
+  float: right;
+  margin-left: 10%;
+  color: #fff;
+  font-size: 72%;
 }
-
 
 /*----------------------------------DASHBOARD--------------------------------*/
 
 #screenDash {
-    background-color: #FFF;
+  background-color: #fff;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1 {
-    font-size: 25px;
+  font-size: 25px;
 }
-
+.title {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #093355;
+  font-family: "Mulish", sans-serif;
+}
 .log {
-    size: 15px;
-    border-radius: 0.4em;
-    height: 80px;
-    width: 80px;
-    padding-bottom: 2px;
-    justify-content: center;
+  size: 15px;
+  border-radius: 0.4em;
+  height: 80px;
+  width: 80px;
+  padding-bottom: 2px;
+  justify-content: center;
 }
-
 
 /*navbar*/
 
 .form-inline .form-control {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
 }
 
+.btn-search {
+  right: 3px;
+}
 
 /* mejorar flex de dash*/
 
 div #student {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 div.card {
-    margin-top: 0.7%;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin-top: 0.7%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 card-img-top {
-    width: 80%;
+  width: 80%;
 }
 
 div.card {
-    margin-top: 0.7%;
+  margin-top: 0.7%;
 }
 
 .card {
-    position: sticky;
-    font-family: "Mulish", sans-serif;
-    display: flex;
-    flex-direction: row;
-    min-width: auto;
-    word-wrap: break-word;
-    background: #6bece6b4;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient( to right, #48b1bf, #06beb6);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient( to right, #48b1bf, #06beb6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius: 0.45rem;
-    color: rgb(235, 241, 255);
+  position: sticky;
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: row;
+  min-width: auto;
+  word-wrap: break-word;
+  background: #6bece6b4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #48b1bf, #06beb6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 0.45rem;
+  color: rgb(235, 241, 255);
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bg-primary {
-    background-color: var(--primary) !important;
+  background-color: var(--primary) !important;
 }
 
 #sidebar-container {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 #sidebar-container .logo {
-    padding: 0.875em 1.25rem;
+  padding: 0.875em 1.25rem;
 }
 
 #content {
-    overflow-y: auto;
-    height: 100vh;
-    padding-bottom: 5rem;
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 5rem;
 }
 
 .stat {
-    border-right: 1 px solid var(--grey);
+  border-right: 1 px solid var(--grey);
 }
 
 @media (max-width: 768px) {
-    #sidebar-container {
-        display: none;
-    }
-    .stat {
-        border: 0;
-    }
+  #sidebar-container {
+    display: none;
+  }
+  .stat {
+    border: 0;
+  }
 }
