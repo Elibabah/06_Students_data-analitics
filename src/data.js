@@ -27,6 +27,7 @@ let cleanStudents = () => {
 });
 //Ordenar cards de alumnas alfabeticamente
 */
+
 //------------------------------- F E T C H - A - D A T A - A P I -------------------------------//
 
 export const alumnasWild = () => {
@@ -126,11 +127,18 @@ export const traerAlumnas = (generacion) => {
     //Iterar alumnas del array
     cleanStudents();
 
-    //Sort para ordenar alumnas
-    let ordenarEstudiantes = () => {
-        generacionesArray.sort();
-
+    generacionesArray.sort((a, b) => {
         //Limpiar cards sort
+
+        let nameA = a.nombre.toUpperCase();
+        let nameB = b.nombre.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
 
         for (let [index, alumnas] of generacionesArray[0][
                 generacion
@@ -170,12 +178,12 @@ export const traerAlumnas = (generacion) => {
 
 `;
         }
-    };
+    });
 
     // Agregar función ordenar al click
-    let ordenarEst = document.getElementById("generations");
-    ordenarEst.addEventListener("click", ordenarEstudiantes);
-    console.log(ordenarEstudiantes);
+    /*let ordenarEst = document.getElementById("generations");
+            ordenarEst.addEventListener("click", ordenarEstudiantes);
+            console.log(ordenarEstudiantes);*/
 };
 
 //----------------------------- Función para traer progreso --------------------------------//
