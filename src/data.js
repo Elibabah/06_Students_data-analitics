@@ -15,15 +15,15 @@ let cleanStudents = () => {
 };
 //------------Función acomodar cards alfabeticamente ----------//
 /*estudiantes.sort((a, b) => {
-  let nameA = a.nombre.toUpperCase();
-  let nameB = b.nombre.toUpperCase();
-  if (nameA < nameB) {
-    return -1;
-  }
-  if (nameA > nameB) {
-    return 1;
-  }
-  return 0;
+    let nameA = a.nombre.toUpperCase();
+    let nameB = b.nombre.toUpperCase();
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameA > nameB) {
+        return 1;
+    }
+        return 0;
 });
 //Ordenar cards de alumnas alfabeticamente
 */
@@ -112,7 +112,7 @@ export const traerGeneraciones = (sede) => {
             width="70"
             height="45"
             class="d-inline-block align-text-top"
-          />`;
+        />`;
     }
 };
 //----------------------- Funcion para traer alumnas por generación -----------------------//
@@ -130,7 +130,7 @@ export const traerAlumnas = (generacion) => {
     let ordenarEstudiantes = () => {
         generacionesArray.sort();
 
-        //Limpiar cards
+        //Limpiar cards sort
 
         for (let [index, alumnas] of generacionesArray[0][
                 generacion
@@ -145,32 +145,39 @@ export const traerAlumnas = (generacion) => {
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
 
-        <button type="button" onclick="dashboard.progreso('${index}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}">Ver progreso
+        <button type="button" onclick="dashboard.progreso('${index}')"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}">Ver progreso
     </button>
         </div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="modal_${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> ${alumnas.nombre}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="tema">
-      ${alumnas.nombre}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> ${alumnas.nombre}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="tema">
+        ${alumnas.nombre}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
     </div>
-  </div>
 </div>
+
 `;
         }
     };
+
+    // Agregar función ordenar al click
+    let ordenarEst = document.getElementById("generations");
+    ordenarEst.addEventListener("click", ordenarEstudiantes);
+    console.log(ordenarEstudiantes);
 };
+
 //----------------------------- Función para traer progreso --------------------------------//
 
 export const traerProgreso = (index) => {
