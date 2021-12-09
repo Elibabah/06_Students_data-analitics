@@ -105,13 +105,12 @@ export const traerGeneraciones = (sede) => {
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
   console.log(generacion);
-
+  //Iterar alumnas del array
+  cleanStudents();
   // Pasar data a array vacío de progreso
   progresoArray.push(generacionesArray[0][generacion].estudiantes);
   console.log(progresoArray);
   console.log(generacionesArray[0][generacion].estudiantes);
-  //Iterar alumnas del array
-  cleanStudents();
 
   //Encendemos funcion sort
   ordenar(progresoArray[0]);
