@@ -11,10 +11,10 @@ document.getElementById("sedes").hidden = false;
 document.getElementById("screenDash").hidden = true;
 
 // funcion para busqueda de alumnas
-let search = document.getElementById("buscar");
+/*let search = document.getElementById("buscar");
 search.addEventListener("keyup", () => {
   buscaAlumna(sede, generacion);
-});
+});*/
 
 let entrar = document.getElementById("entrar-dashboard");
 entrar.addEventListener("click", () => {

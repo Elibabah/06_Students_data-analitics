@@ -214,7 +214,7 @@ export const traerAlumnas = (generacion) => {
   }
 };
 
-//-----------Función sort para ordenar cards alfabeticamente---------------//
+//--------------Función sort para ordenar cards alfabeticamente---------------//
 
 const ordenar = (studentsArray) => {
   console.log(studentsArray);
@@ -234,6 +234,46 @@ const ordenar = (studentsArray) => {
   });
 };
 
+//-------------------Función para buscar estudiantes---------------------//
+/* 
+let busqueda = document.querySelector("#buscar");
+let lupa = document.querySelector("#lup");
+let result = document.querySelector("#student");
+const searchStudents = (generacion) => {
+  console.log(busqueda.value);
+  result.innerHTML = "";
+  //datosEstudiantes();
+  const script = busqueda.value.toLowerCase();
+  for (
+    let i = 0;
+    i < dataToArray[0][sede].generacionesArray[0][generacion].estudiantes;
+    i++
+  ) {
+    const names =
+      dataToArray[0][sede].generacionesArray[0][generacion].estudiantes[
+        i
+      ].nombre.toLowerCase();
+    if (names.indexOf(script) !== -1) {
+      //metodo indexOf
+      result.innerHTML += `
+      <center>
+        <div class="card w-100">
+            <div class="card-body">
+                <h5 class="card-title"><b>${dataToArray[0][sede].generacionesArray[0][generacion].estudiantes[i].nombre}</b></h5>
+                <h6 class="card-text"><b>E-mail:</b> ${dataToArray[0][sede].generacionesArray[0][generacion].estudiantes[i].nombre[i].correo}</h6>
+                
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=#id${i}>
+                    Ver más...
+                </button>
+      </center>`;
+    }
+  }
+  if (result.innerHTML === "") {
+    result.innerHTML += `<h2>Alumna no registrada... </h2>`;
+  }
+};
+lupa.addEventListener("click", searchStudents);
+busqueda.addEventListener("keyup", searchStudents);*/
 //----------------------------- Función para traer progreso --------------------------------//
 
 /*export const traerProgreso = (index) => {
