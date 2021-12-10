@@ -149,7 +149,7 @@ export const traerGeneraciones = (sede) => {
                                         <div class="mx-auto">
                                             <h6 class="text-muted">Estudiantes con más del 90% de competencia</h6>
                                             <h3 class="font-weight-bold"></h3>
-                                            <h6 class="text-success"></h6>
+                                            <h6 class="text-success">84%</h6>
                                         </div>
                                     </div>
       `;
