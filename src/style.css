@@ -157,6 +157,11 @@ h1 {
     font-size: 25px;
 }
 
+.menu {
+    font-family: "Mulish", sans-serif;
+    color: var(--grey);
+}
+
 #sidebar-container {
     background-color: #50c9c3;
 }
@@ -211,7 +216,7 @@ div.card {
     border-radius: 1%;
     margin-left: 0.1%;
     margin-right: 0.1%;
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 .card {
@@ -225,10 +230,15 @@ div.card {
 }
 
 .btn-primary {
-    background-color: #093355;
+    background-color: var(--grey);
     text-align: center;
     display: block;
     margin: auto;
+    font-size: 75%;
+}
+
+.text-success {
+    color: white;
 }
 
 .cardBody {
@@ -263,6 +273,19 @@ div.card {
 
 .stat {
     border-right: 1 px solid var(--grey);
+}
+
+#asideGen:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#inicio:hover {
+    transform: scale(1.05);
+}
+
+#exit:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
