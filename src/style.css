@@ -153,7 +153,10 @@ a {
 h1 {
   font-size: 25px;
 }
-
+.menu {
+  font-family: "Mulish", sans-serif;
+  color: var(--grey);
+}
 #sidebar-container {
   background-color: #50c9c3; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -217,7 +220,7 @@ div.card {
   border-radius: 1%;
   margin-left: 0.1%;
   margin-right: 0.1%;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .card {
@@ -231,12 +234,15 @@ div.card {
 }
 
 .btn-primary {
-  background-color: #093355;
+  background-color: var(--grey);
   text-align: center;
   display: block;
   margin: auto;
+  font-size: 75%;
 }
-
+.text-success {
+  color: white;
+}
 .cardBody {
   margin-left: 5%;
   position: sticky;
@@ -255,10 +261,13 @@ div.card {
 
 #sidebar-container {
   min-height: 100vh;
+  padding-right: 0.5em;
 }
 
 #sidebar-container .logo {
   padding: 0.875em 1.25rem;
+  justify-content: center;
+  align-items: center;
 }
 
 #content {
