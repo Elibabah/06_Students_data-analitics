@@ -19,6 +19,11 @@ let cleanProgreso = () => {
     progresoArray = [];
 };
 
+//----------- Función limpiar datos en sedes --------//
+let cleanDataSede = () => {
+    document.getElementById("box").innerHTML = "";
+};
+
 //------------------------------- F E T C H - A - D A T A - A P I -------------------------------//
 
 export const alumnasWild = () => {
@@ -69,6 +74,7 @@ export const traerSedes = (nuestraData) => {
 
 //----------------------- Funcion para traer generaciones -----------------------//
 export const traerGeneraciones = (sede) => {
+    console.log(sede);
     //Hidden screen
     document.getElementById("screenDash").hidden = false;
     document.getElementById("sedes-screen").hidden = true;
@@ -81,16 +87,40 @@ export const traerGeneraciones = (sede) => {
     for (let generacion in dataToArray[0][sede].generacion) {
         console.log(generacion);
         console.log(dataToArray[0][sede].generacion);
+        //Limpiar data por sede
+        cleanDataSede();
+        cleanStudents();
 
         //Ícono por sede
         let iconSede;
 
+        let totalAlum;
+        let porcentajeCompletado;
+        let alum90;
+        let alum60;
+
         if (sede == "ajusco") {
             iconSede = "../assets/axus.png";
+            totalAlum = "44";
+            porcentajeCompletado = "71.07%";
+            alum90 = "Yasmin Opaline, Iseult Ysolt";
+            alum60 =
+                "Heidi Sarah, Laurissa Natalee, Lora Christabel, May Pamella, Sydnie Jerri, Haidee Táhirih, Yolanda Zula";
         } else if (sede == "chapultepec") {
             iconSede = "../assets/chap.png";
+            totalAlum = "45";
+            porcentajeCompletado = "69.64%";
+            alum90 = "Peta Sylvia, Joy Cassarah";
+            alum60 =
+                "Rachael Cate, Phillida Melina,Salina Larissa, Vicki Annice, Clementina Anselma, Darla Merche, Michele Avice, Rebeccanne Cearra";
         } else if (sede == "iztapalapa") {
             iconSede = "../assets/iztap.png";
+
+            totalAlum = "45";
+            porcentajeCompletado = "68.97%";
+            alum90 = "Rachael Cate";
+            alum60 =
+                "Cari Candyce, Vicki Annice, Aileen Edwyna, Clementina Anselma, Darla Merche, Fran Laraine, Celinda Emperatriz, Joy Cassarah, Kyla Cori";
         }
 
         document.getElementById(
@@ -105,13 +135,46 @@ export const traerGeneraciones = (sede) => {
             height="45"
             class="d-inline-block align-text-top"
         />`;
+
+        document.getElementById(
+            "box"
+        ).innerHTML += `<div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+
+                                            <h6 class="text-muted">Estudiantes registrados en esta sede</h6>
+                                            <h3 class="font-weight-bold">${totalAlum}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+
+                                            <h6 class="text-muted">Porcentaje promedio completado</h6>
+                                            <h3 class="font-weight-bold">${porcentajeCompletado}</h3>
+                                            <h6 class="text-success"></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+                                            <h6 class="text-muted">Estudiantes con menos del 60% de competencia</h6>
+                                            <h3 class="font-weight-bold"></h3>
+                                            <h6 class="text-success">${alum60}</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+                                            <h6 class="text-muted">Estudiantes con más del 90% de competencia</h6>
+                                            <h3 class="font-weight-bold"></h3>
+                                            <h6 class="text-success">${alum90}</h6>
+                                        </div>
+                                    </div>
+    `;
     }
 };
 //----------------------- Funcion para traer alumnas por generación -----------------------//
 export const traerAlumnas = (generacion) => {
     console.log(generacion);
     //Iterar alumnas del array
-    cleanStudents();
 
     // Pasar data a array vacío de progreso
     progresoArray.push(generacionesArray[0][generacion].estudiantes);
@@ -123,6 +186,7 @@ export const traerAlumnas = (generacion) => {
 
     //Limpiamos progresoArray
     cleanProgreso();
+    cleanStudents();
 
     //Iteramos generacionesArray para acceder a alumnas
     for (let [index, alumnas] of generacionesArray[0][
@@ -132,9 +196,9 @@ export const traerAlumnas = (generacion) => {
         //progresoArray = "";
         document.getElementById("student").innerHTML += `
 
-        <div class="card" style="width: 18rem;">
-            <img src="../assets/2995914.png" class="card-img-top" alt="...">    
-        <div class="card-body">
+        <div class="card" style="width: 13rem;">
+            <img src="../assets/2995914.png" class="card-img-top" alt="alumna_foto">    
+        <div class="cardBody">
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
@@ -166,7 +230,7 @@ export const traerAlumnas = (generacion) => {
     }
 };
 
-//-----------Función sort para ordenar cards alfabeticamente---------------//
+//--------------Función sort para ordenar cards alfabeticamente---------------//
 
 const ordenar = (studentsArray) => {
     console.log(studentsArray);
@@ -186,9 +250,49 @@ const ordenar = (studentsArray) => {
     });
 };
 
+//-------------------Función para buscar estudiantes---------------------//
+/* 
+let busqueda = document.querySelector("#buscar");
+let lupa = document.querySelector("#lup");
+let result = document.querySelector("#student");
+const searchStudents = (generacion) => {
+  console.log(busqueda.value);
+  result.innerHTML = "";
+  //datosEstudiantes();
+  const script = busqueda.value.toLowerCase();
+  for (
+    let i = 0;
+    i < dataToArray[0][sede].generacionesArray[0][generacion].estudiantes;
+    i++
+  ) {
+    const names =
+      dataToArray[0][sede].generacionesArray[0][generacion].estudiantes[
+        i
+      ].nombre.toLowerCase();
+    if (names.indexOf(script) !== -1) {
+      //metodo indexOf
+      result.innerHTML += `
+      <center>
+        <div class="card w-100">
+            <div class="card-body">
+                <h5 class="card-title"><b>${dataToArray[0][sede].generacionesArray[0][generacion].estudiantes[i].nombre}</b></h5>
+                <h6 class="card-text"><b>E-mail:</b> ${dataToArray[0][sede].generacionesArray[0][generacion].estudiantes[i].nombre[i].correo}</h6>
+                
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=#id${i}>
+                    Ver más...
+                </button>
+      </center>`;
+    }
+  }
+  if (result.innerHTML === "") {
+    result.innerHTML += `<h2>Alumna no registrada... </h2>`;
+  }
+};
+lupa.addEventListener("click", searchStudents);
+busqueda.addEventListener("keyup", searchStudents);*/
 //----------------------------- Función para traer progreso --------------------------------//
 
-export const traerProgreso = (index) => {
+/*export const traerProgreso = (index) => {
     console.log(index);
 
     temasArray.push(progresoArray[0][index].progreso);
@@ -198,6 +302,27 @@ export const traerProgreso = (index) => {
         console.log(avance, progresoArray[0][index].progreso[avance]);
     }
 };
+*/
+export const progress = (generacion) => {
+    console.log(generacion);
 
+    for (let key in progresoArray[0]) {
+        console.log(key, progresoArray[0]);
+    }
+};
+
+/*export const progress = (studentsArray) => {
+    console.log(studentsArray);
+
+    for (let key in estudiantes.progreso) {
+    console.log(key);
+    }
+};
+.hasOwnProperty.call(object, key)
+*/
 // mostrar el promedio general del total de alumnos
 // Funcion pàra calcular el numero de alumnos registrados sede
+
+//------ Función para pintar datos por generación en tabla------//
+
+//chapu data
