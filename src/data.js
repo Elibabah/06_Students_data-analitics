@@ -69,6 +69,7 @@ export const traerSedes = (nuestraData) => {
 
 //----------------------- Funcion para traer generaciones -----------------------//
 export const traerGeneraciones = (sede) => {
+  console.log(sede);
   //Hidden screen
   document.getElementById("screenDash").hidden = false;
   document.getElementById("sedes-screen").hidden = true;
@@ -85,11 +86,24 @@ export const traerGeneraciones = (sede) => {
     //Ícono por sede
     let iconSede;
 
+    let alumnosProm;
+    let porcentaje;
+    let gen3;
+
     if (sede == "ajusco") {
       iconSede = "../assets/axus.png";
+      alumnosProm = "";
+      gen2 = "";
+      gen3 = "";
     } else if (sede == "chapultepec") {
+      gen1 = "";
+      gen2 = "";
+      gen3 = "";
       iconSede = "../assets/chap.png";
     } else if (sede == "iztapalapa") {
+      alumnosProm = "95";
+      porcentaje = "%";
+      gen3 = "";
       iconSede = "../assets/iztap.png";
     }
 
@@ -105,6 +119,40 @@ export const traerGeneraciones = (sede) => {
             height="45"
             class="d-inline-block align-text-top"
         />`;
+
+    document.getElementById(
+      "box"
+    ).innerHTML += `<div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+
+                                            <h6 class="text-muted">Estudiantes registrados en esta sede</h6>
+                                            <h3 class="font-weight-bold">${alumnosProm}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+
+                                            <h6 class="text-muted">Promedio por generacion</h6>
+                                            <h3 class="font-weight-bold">8.45</h3>
+                                            <h6 class="text-success">${porcentaje}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+                                            <h6 class="text-muted">Estudiantes con menos del 60% de competencia</h6>
+                                            <h3 class="font-weight-bold"></h3>
+                                            <h6 class="text-success"></h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                        <div class="mx-auto">
+                                            <h6 class="text-muted">Estudiantes con más del 90% de competencia</h6>
+                                            <h3 class="font-weight-bold"></h3>
+                                            <h6 class="text-success"></h6>
+                                        </div>
+                                    </div>
+      `;
   }
 };
 //----------------------- Funcion para traer alumnas por generación -----------------------//
@@ -199,8 +247,12 @@ const ordenar = (studentsArray) => {
     }
 };
 */
-export const progress = (alumnas) => {
-  console.log(alumnas);
+export const progress = (generacion) => {
+  console.log(generacion);
+
+  for (let key in progresoArray[0]) {
+    console.log(key, progresoArray[0]);
+  }
 };
 
 /*export const progress = (studentsArray) => {
@@ -210,6 +262,23 @@ export const progress = (alumnas) => {
     console.log(key);
   }
 };
+.hasOwnProperty.call(object, key)
 */
 // mostrar el promedio general del total de alumnos
 // Funcion pàra calcular el numero de alumnos registrados sede
+
+//------ Función para pintar datos por generación en tabla------//
+
+const datosGen = () => {
+  let gen1;
+  let gen2;
+  let gen3;
+
+  if (sede == ajusco) {
+    gen1 = "";
+    gen2 = "";
+    gen3 = "";
+  } else if (generacion == segunda) {
+  } else if (generacion == tercera) {
+  }
+};
