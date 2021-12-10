@@ -4,11 +4,17 @@ import {
   traerGeneraciones,
   cleanGeneration,
   traerAlumnas,
-  traerProgreso,
+  progress,
 } from "./data.js"; //Recibe el EXPORT de fetch de data.js
 
 document.getElementById("sedes").hidden = false;
 document.getElementById("screenDash").hidden = true;
+
+// funcion para busqueda de alumnas
+let search = document.getElementById("buscar");
+search.addEventListener("keyup", () => {
+  buscaAlumna(sede, generacion);
+});
 
 let entrar = document.getElementById("entrar-dashboard");
 entrar.addEventListener("click", () => {
@@ -26,7 +32,7 @@ window.dashboard = {
     traerAlumnas(alumnas);
   },
   progreso: (progreso) => {
-    traerProgreso(progreso);
+    progress(progreso);
   },
 };
 
