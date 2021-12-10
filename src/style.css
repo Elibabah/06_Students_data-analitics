@@ -185,18 +185,13 @@ div #student {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #0f0c29;
-}
-
-card-img-top {
-    width: 80%;
 }
 
 div.card {
     margin-top: 1%;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    column-gap: 2%;
-    row-gap: 2%;
+    column-gap: 4%;
+    row-gap: 4%;
 }
 
 #box {
@@ -208,25 +203,20 @@ div.card {
 }
 
 .card {
-    position: sticky;
-    font-family: "Mulish", sans-serif;
-    display: flex;
-    flex-direction: row;
-    min-width: auto;
-    word-wrap: break-word;
     background: #6bece6b4;
-    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #48b1bf, #06beb6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 0.45rem;
     color: rgb(235, 241, 255);
+    padding: 1%;
+    font-family: "Mulish", sans-serif;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+.btn-primary {
+    background-color: #093355;
+    text-align: center;
+    display: block;
+    margin: auto;
 }
 
 .cardBody {

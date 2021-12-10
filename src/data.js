@@ -197,7 +197,7 @@ export const traerAlumnas = (generacion) => {
         document.getElementById("student").innerHTML += `
 
         <div class="card" style="width: 13rem;">
-            <img src="../assets/2995914.png" class="card-img-top" alt="...">    
+            <img src="../assets/2995914.png" class="card-img-top" alt="alumna_foto">    
         <div class="cardBody">
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
