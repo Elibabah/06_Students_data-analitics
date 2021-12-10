@@ -125,7 +125,7 @@ export const traerGeneraciones = (sede) => {
 
         document.getElementById(
             "generations"
-        ).innerHTML += `<a onclick="dashboard.alumnas('${generacion}')"class="d-block text-light p-3"
+        ).innerHTML += `<a onclick="dashboard.alumnas('${generacion}')"class="d-block text-dark p-3" id="asideGen"
 ><i class="fas fa-user-graduate mr-2 lead"></i>${generacion} generación</a>`;
         document.getElementById("nombreSede").innerHTML = "Sede" + " " + sede;
         document.getElementById("icono-sede").innerHTML = `<img
