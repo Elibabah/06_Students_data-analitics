@@ -196,9 +196,9 @@ export const traerAlumnas = (generacion) => {
         //progresoArray = "";
         document.getElementById("student").innerHTML += `
 
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 13rem;">
             <img src="../assets/2995914.png" class="card-img-top" alt="...">    
-        <div class="card-body">
+        <div class="cardBody">
             <h5 id="nameSt" class="card-title">${alumnas.nombre}</h5>
         <p class="card-text"><b>email:</b> ${alumnas.correo}</p>
         <p class="card-text"><b>turno:</b> ${alumnas.turno}</p>
